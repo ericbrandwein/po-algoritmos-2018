@@ -1,0 +1,40 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amssymb}
+
+\begin{document}
+$A = QR$, $Q$: ortogonal, $R$: triangular superior
+\[
+    A^tA = (QR)^t QR = R^tQ^tQR = R^tQ^{-1}QR = R^tIR = R^tR
+\]
+
+$R^t$ es diagonal inferior. Podemos decir que $R^t = R'^tD$,
+con $D$ una diagonal tal que $R'^t$ tiene solo unos en la
+diagonal. Si usamos $D$ como la diagonal de $R$, siempre
+que $R$ no tenga ceros en la diagonal vamos
+a poder encontrar a $R'$. Veamos que $R$ no puede tener ceros
+en la diagonal.
+
+$A$ es inversible, como dice en el enunciado. Por lo tanto,
+\[
+    det(A) \neq 0 \iff det(QR) = det(Q)det(R) \neq 0
+    \iff det(Q) \neq 0 \land det(R) \neq 0
+\]
+
+Como R es una triangular superior, su determinante es igual
+a la multiplicacion de los valores de su diagonal. Entonces,
+ningún valor de su diagonal puede ser 0.
+
+Ahora que encontramos $R'^t$, reescribiremos a $R^tR$ como
+\(
+    R^tR = R'^tDR
+\). Como $R'^t$ es una triangular inferior con unos en la
+diagonal, podemos tomarla como nuestra $L$, y como $DR$,
+por ser multiplicación de triangulares superiores,
+es triangular superior, podemos tomarla como nuestra $U$,
+tal que $A^tA = R'^tDR = LU$. Luego, encontramos una
+factorización $LU$ de $A^tA$, como pedía el enunciado.
+$\hfill\blacksquare$
+
+\end{document}
